@@ -1,0 +1,38 @@
+<center><h1><font color="white">ON SORT !!</font></h1></center>
+<br>
+<br>
+<br>
+<center><img src="https://images.pexels.com/photos/3727146/pexels-photo-3727146.jpeg?auto=compress&cs=tinysrgb&w=600" /></center>
+<br>
+<br>
+<br>
+<br>
+
+     <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        </li>
+
+        <li>
+          Voici ton email : <%= current_user.email %>
+        </li>
+
+        <li>
+          <%= link_to "Secret page", static_pages_secret_path %>
+        </li>
+
+        <li>
+          <%= link_to "Edit email / password", edit_user_registration_path %>
+        </li>
+
+      <% else %>
+        <li>    
+          <%= link_to "Sign in", new_user_session_path %>
+        </li>
+
+        <li>
+          <%= link_to "Sign up", new_user_registration_path %>
+        </li>
+
+      <% end %>
+    </ul>
